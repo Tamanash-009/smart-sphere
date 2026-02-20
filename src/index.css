@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-legal-navy: #1a237e;
+  --color-legal-gold: #C5A059;
+  --color-legal-paper: #F9FAFB;
+
+  --font-sans: "Manrope", sans-serif;
+  --font-serif: "Merriweather", serif;
+
+  --image-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+@layer base {
+  body {
+    @apply bg-legal-paper text-gray-900 font-sans antialiased dark:bg-gray-900 dark:text-gray-100;
+    background-image: var(--image-noise);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans font-bold text-legal-navy dark:text-white;
+  }
+
+  .glass {
+    @apply bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-white/20 dark:border-gray-700 shadow-lg;
+  }
+}
